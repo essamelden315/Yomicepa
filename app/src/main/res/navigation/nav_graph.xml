@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.yomicepa.login.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.yomicepa.homeScreen.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_createReturnRequestFragment"
+            app:destination="@id/createReturnRequestFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_itemsFragment"
+            app:destination="@id/itemsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createReturnRequestFragment"
+        android:name="com.example.yomicepa.createReturnRequestScreen.view.CreateReturnRequestFragment"
+        android:label="fragment_create_return_request"
+        tools:layout="@layout/fragment_create_return_request" >
+        <action
+            android:id="@+id/action_createReturnRequestFragment_to_addItemsFragment"
+            app:destination="@id/addItemsFragment" />
+        <action
+            android:id="@+id/action_createReturnRequestFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemsFragment"
+        android:name="com.example.yomicepa.itemsScreen.view.ItemsFragment"
+        android:label="fragment_items"
+        tools:layout="@layout/fragment_items" >
+        <action
+            android:id="@+id/action_itemsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemsFragment"
+        android:name="com.example.yomicepa.addItemsScreen.view.AddItemsFragment"
+        android:label="fragment_add_items"
+        tools:layout="@layout/fragment_add_items" >
+        <action
+            android:id="@+id/action_addItemsFragment_to_itemsFragment"
+            app:destination="@id/itemsFragment" />
+    </fragment>
+</navigation>

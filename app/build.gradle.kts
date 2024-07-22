@@ -35,11 +35,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        dataBinding= true
-    }
     kapt {
         correctErrorTypes = true
+    }
+    buildFeatures{
+        viewBinding= true
     }
 }
 
