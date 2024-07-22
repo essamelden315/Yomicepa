@@ -1,6 +1,6 @@
 package com.example.yomicepa.models
 
-data class UserInfo(
+data class User(
     val activated: Boolean,
     val createdAt: String,
     val email: String,

@@ -1,0 +1,31 @@
+package com.example.yomicepa.models
+
+data class Item(
+    val actualReturnValue: Double,
+    val adminComment: String?,
+    val controlledSubstanceCode: String?,
+    val createdAt: String,
+    val description: String,
+    val dosage: String,
+    val expectedReturnValue: Double,
+    val expirationDate: String,
+    val extendedPrice: Double,
+    val extendedUnitPrice: Double,
+    val fullQuantity: Double,
+    val gtin14: String?,
+    val id: Int,
+    val itemStatus: String,
+    val lotNumber: String,
+    val manufacturer: String,
+    val name: String,
+    val ndc: String,
+    val packagePrice: Double,
+    val packageSize: String,
+    val partialQuantity: Double,
+    val requestType: String,
+    val serialNumber: String?,
+    val shipment: String?,
+    val strength: String,
+    val unitPrice: Double,
+    val updatedAt: String
+)
