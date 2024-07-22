@@ -2,6 +2,6 @@ package com.example.yomicepa.utilities
 
 object ApiToken {
     var token =""
-    var bearerToken = "Bearer $token"
+    var bearerToken = ""
     var pharmacyId:Int = 0
 }

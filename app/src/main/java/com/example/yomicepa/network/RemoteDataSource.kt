@@ -1,6 +1,7 @@
 package com.example.yomicepa.network
 
 import com.example.yomicepa.models.Item
+import com.example.yomicepa.models.LoginRequest
 import com.example.yomicepa.models.LoginResponse
 import com.example.yomicepa.models.Pharmacy
 import com.example.yomicepa.models.PharmacyListResponse
@@ -11,7 +12,7 @@ import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 
 interface RemoteDataSource {
-    suspend fun login(username: String, password: String): Flow<Response<LoginResponse>>
+    suspend fun login(loginRequest: LoginRequest): Flow<Response<LoginResponse>>
 
     suspend fun findAllPharmacies(authHeader: String): Flow<Response<List<PharmacyListResponse>>>
 

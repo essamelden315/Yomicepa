@@ -1,6 +1,7 @@
 package com.example.yomicepa.network
 
 import com.example.yomicepa.models.Item
+import com.example.yomicepa.models.LoginRequest
 import com.example.yomicepa.models.LoginResponse
 import com.example.yomicepa.models.Pharmacy
 import com.example.yomicepa.models.PharmacyListResponse
@@ -10,11 +11,20 @@ import com.example.yomicepa.models.Wholesaler
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.Response
+import javax.inject.Inject
 
-class PharmacyClient(private val remote:PharmacyApiService):RemoteDataSource {
-
-    override suspend fun login(username: String, password: String): Flow<Response<LoginResponse>> {
-        return flow{emit(remote.login(username,password)) }
+class PharmacyClient :RemoteDataSource {
+    private val remote = PharmacyApiServiceInstance.myApiServiceInstance
+    companion object {
+        private var myInstance: PharmacyClient? = null
+        fun getInstance(): PharmacyClient? {
+            if (myInstance==null)
+                myInstance = PharmacyClient()
+            return myInstance
+        }
+    }
+    override suspend fun login(loginRequest : LoginRequest): Flow<Response<LoginResponse>> {
+        return flow{emit(remote.login(loginRequest)) }
     }
 
     override suspend fun findAllPharmacies(authHeader: String): Flow<Response<List<PharmacyListResponse>>> {
