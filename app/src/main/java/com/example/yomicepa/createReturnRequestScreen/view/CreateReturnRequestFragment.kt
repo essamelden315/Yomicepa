@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.yomicepa.R
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+
 class CreateReturnRequestFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

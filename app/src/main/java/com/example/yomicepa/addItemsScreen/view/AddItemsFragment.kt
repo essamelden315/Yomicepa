@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.yomicepa.R
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+
 class AddItemsFragment : Fragment() {
 
     override fun onCreateView(

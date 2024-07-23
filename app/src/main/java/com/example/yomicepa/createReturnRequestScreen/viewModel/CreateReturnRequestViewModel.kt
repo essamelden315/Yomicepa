@@ -5,6 +5,6 @@ import com.example.yomicepa.repository.RepositoryInterface
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-@HiltViewModel
-class CreateReturnRequestViewModel @Inject constructor(private val repo: RepositoryInterface): ViewModel() {
+
+class CreateReturnRequestViewModel (private val repo: RepositoryInterface): ViewModel() {
 }

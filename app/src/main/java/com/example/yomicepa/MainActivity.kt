@@ -20,10 +20,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         //enableEdgeToEdge()
         setContentView(binding.root)
+        val customTitleView = layoutInflater.inflate(R.layout.custom_title, null)
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment
         navHostFragment.findNavController().run {
             binding.toolBar.setupWithNavController(this, AppBarConfiguration(graph))
+            binding.toolBar.addView(customTitleView)
         }
 //
     }

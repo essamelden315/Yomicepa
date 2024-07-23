@@ -5,6 +5,6 @@ import com.example.yomicepa.repository.RepositoryInterface
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-@HiltViewModel
-class AddItemsViewModel @Inject constructor(private val repo: RepositoryInterface): ViewModel() {
+
+class AddItemsViewModel (private val repo: RepositoryInterface): ViewModel() {
 }
